@@ -88,6 +88,22 @@ public class LinkedLinkExercises{
 			
 		}
 	}
+	
+	public void reverseLinkedList() {
+		Node prev = null;
+		Node next = null;
+		Node current = head;
+		
+		while (current != null) {
+			 next = current.next;
+			 current.next = prev;
+			 prev = current;
+			 current = next;
+		}
+		printLinkedList(prev);
+	}
+	
+	
 	public static void main(String[] args) {
 		LinkedLinkExercises l= new LinkedLinkExercises();
 		l.addNodeAtEnd(0);
@@ -99,8 +115,9 @@ public class LinkedLinkExercises{
 //		l.addNodeAtIndex(48, 4);
 //		l.deleteNodeAtEnd();
 //		l.deleteNodeAtStart();
-		l.deleteNodeAtIndex(3);
-		l.printLinkedList(head);
+//		l.deleteNodeAtIndex(3);
+//		l.printLinkedList(head);
+		l.reverseLinkedList();
 		
 		
 	}
